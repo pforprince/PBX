@@ -13,6 +13,14 @@
 
 .card-header {
   padding: 0.2rem 0.4rem !important;
-  color:cornflowerblue;
+  color: cornflowerblue;
   font-weight: bold;
+}
+
+.list-group-item {
+  padding: 0.5rem 0.5em !important;
+}
+
+a{
+  cursor: pointer;
 }

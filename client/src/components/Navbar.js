@@ -4,12 +4,37 @@ const Navbar = () => {
   return (
     <>
       <Navbar1 bg="info" expand="lg">
-        <Navbar1.Brand href="#home">React-Bootstrap</Navbar1.Brand>
+        <Navbar1.Brand href="#home">SwitchBoard</Navbar1.Brand>
         <Navbar1.Toggle aria-controls="basic-navbar-nav" />
         <Navbar1.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
+            <Nav.Link href="#home">
+              <input
+                type="text"
+                placeholder="Enter a number"
+                className="form-controll"
+              />
+            </Nav.Link>
+            <Nav.Link href="#home">
+              <button className="btn btn-sm btn-secondary">Dial</button>
+            </Nav.Link>
+          </Nav>
+          <Nav className="ml-auto">
+            <Nav.Link href="#link">
+              <i class="far fa-question-circle"></i>
+            </Nav.Link>
+            <Nav.Link href="#link">
+              <i class="fas fa-tv"></i>
+            </Nav.Link>
+            <Nav.Link href="#link">
+              <i class="fas fa-user"></i>
+            </Nav.Link>
+            <Nav.Link href="#home">
+              <i class="fa fa-bell" aria-hidden="true"></i>
+            </Nav.Link>
+            <Nav.Link href="#link">
+              <i class="fas fa-cogs"></i>
+            </Nav.Link>
           </Nav>
         </Navbar1.Collapse>
       </Navbar1>
