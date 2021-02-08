@@ -21,19 +21,19 @@ const Navbar = () => {
           </Nav>
           <Nav className="ml-auto">
             <Nav.Link href="#link">
-              <i class="far fa-question-circle"></i>
+              <i className="far fa-question-circle"></i>
             </Nav.Link>
             <Nav.Link href="#link">
-              <i class="fas fa-tv"></i>
+              <i className="fas fa-tv"></i>
             </Nav.Link>
             <Nav.Link href="#link">
-              <i class="fas fa-user"></i>
+              <i className="fas fa-user"></i>
             </Nav.Link>
             <Nav.Link href="#home">
-              <i class="fa fa-bell" aria-hidden="true"></i>
+              <i className="fa fa-bell" aria-hidden="true"></i>
             </Nav.Link>
             <Nav.Link href="#link">
-              <i class="fas fa-cogs"></i>
+              <i className="fas fa-cogs"></i>
             </Nav.Link>
           </Nav>
         </Navbar1.Collapse>

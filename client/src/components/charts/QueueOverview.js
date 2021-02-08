@@ -13,7 +13,7 @@ const QueueOverview = () => {
         }}
       >
         <Card.Header>Queue Member Activity - Sales Queue</Card.Header>
-        <Table table-sm hover size="sm">
+        <Table  hover size="sm">
           <thead>
             <tr>
               <td>Queue &nbsp;&nbsp;&nbsp;&nbsp;</td>
@@ -29,16 +29,16 @@ const QueueOverview = () => {
           </thead>
           <tbody>
             {data.map((d) => (
-              <tr>
+              <tr key={d.id}>
                 <td>{d.name}</td>
                 <td>
-                  100 <i class="fas fa-check-circle text-success"></i>
+                  100 <i className="fas fa-check-circle text-success"></i>
                 </td>
                 <td>-</td>
                 <td>- </td>
                 <td>- </td>
                 <td>- </td>
-                <td>{Math.floor(Math.random() * 20) + 10} </td>
+                <td>{Math.floor(Math.random() * 20) + 10}</td>
               </tr>
             ))}
           </tbody>

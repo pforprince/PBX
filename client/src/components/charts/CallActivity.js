@@ -16,7 +16,7 @@ const CallActivity = () => {
         <Table hover size="sm">
           <thead>
             <tr>
-              <tr> &nbsp; Members</tr>
+              <td> &nbsp; Members</td>
               <th></th>
               <td>Caller</td>
               <td>Duration</td>
@@ -24,10 +24,10 @@ const CallActivity = () => {
           </thead>
           <tbody>
             {data.map((d) => (
-              <tr>
+              <tr key={d.id}>
                 <td>{d.name}</td>
                 <td>
-                  101 <i class="fas fa-user-circle text-success"></i>
+                  101 <i className="fas fa-user-circle text-success"></i>
                 </td>
                 <td>- </td>
                 <td>- </td>

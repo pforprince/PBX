@@ -3,12 +3,11 @@ import Navbar from "../components/Navbar";
 import { Col, Row } from "react-bootstrap";
 
 import MyCalls from "../components/charts/MyCalls";
-import ParkedCalls from "../components/charts/ParkedCalls";
+import GoogleMaps from "../components/charts/GoogleMaps";
 import QuickDials from "../components/charts/QuickDials";
 import CallActivity from "../components/charts/CallActivity";
 import QueueMemberActivity from "../components/charts/QueueMemberActivity";
 import QueueOverview from "../components/charts/QueueOverview";
-
 
 const Reports = () => {
   return (
@@ -18,7 +17,7 @@ const Reports = () => {
         <Row>
           <Col md={3} className="p-2">
             <MyCalls />
-            <ParkedCalls />
+            <GoogleMaps />
             {/* my calls  */}
             {/* parked calls  */}
           </Col>

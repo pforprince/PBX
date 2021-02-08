@@ -1,5 +1,5 @@
 import React from "react";
-import {data} from '../../dummyData/Data'
+import { data } from "../../dummyData/Data";
 
 import { Card, Table } from "react-bootstrap";
 const QuickDials = () => {
@@ -16,7 +16,7 @@ const QuickDials = () => {
         <Table hover size="sm">
           <thead>
             <tr>
-              <tr> &nbsp; Members</tr>
+              <td> &nbsp; Members</td>
               <th></th>
               <th></th>
               <th></th>
@@ -24,19 +24,19 @@ const QuickDials = () => {
           </thead>
           <tbody>
             {data.map((d) => (
-              <tr>
+              <tr key={d.id}>
                 <td>
                   {d.name}
-                  <i class="fas fa-user-circle text-success float-right mr-3"></i>
+                  <i className="fas fa-user-circle text-success float-right mr-3"></i>
                 </td>
                 <td>
-                  <i class="fas fa-phone-alt text-success"></i>
+                  <i className="fas fa-phone-alt text-success"></i>
                 </td>
                 <td>
-                  <i class="fas fa-phone-alt text-secondary"></i>
+                  <i className="fas fa-phone-alt text-secondary"></i>
                 </td>
                 <td>
-                  <i class="fas fa-phone-alt text-danger"></i>
+                  <i className="fas fa-phone-alt text-danger"></i>
                 </td>
               </tr>
             ))}

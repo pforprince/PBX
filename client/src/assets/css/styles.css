@@ -21,6 +21,13 @@
   padding: 0.5rem 0.5em !important;
 }
 
-a{
+a {
   cursor: pointer;
+}
+
+.active-class {
+  background-color: cornflowerblue;
+  color: white;
+  padding: 2px 4px;
+  border-radius: 4px;
 }

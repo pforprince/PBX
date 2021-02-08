@@ -24,10 +24,10 @@ const QueueMemberActivity = () => {
           </thead>
           <tbody>
             {data.map((d) => (
-              <tr>
+              <tr key={d.id}>
                 <td>{d.name}</td>
                 <td>
-                  100 <i class="fas fa-check-circle text-success"></i>
+                  100 <i className="fas fa-check-circle text-success"></i>
                 </td>
                 <td>-</td>
                 <td>- </td>

@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-import { Card, Table, Row, Col } from "react-bootstrap";
+import { Card, Table, Row, Col, Form } from "react-bootstrap";
 import { data } from "../../dummyData/Data";
 
 const MyCalls = () => {
-  const [showCalls, setShowCalls] = useState(true);
+  const [showCalls, setShowCalls] = useState(false);
   const [showVoiceCall, setShowVoiceCalls] = useState(false);
-  const [showCallLogs, setShowCallLogs] = useState(false);
+  const [showCallLogs, setShowCallLogs] = useState(true);
 
   return (
     <>
@@ -24,6 +24,7 @@ const MyCalls = () => {
             justifyContent: "space-around",
             direction: "column",
           }}
+          className="my-2"
         >
           <div>
             <a
@@ -32,7 +33,7 @@ const MyCalls = () => {
                 setShowCallLogs(false);
                 setShowVoiceCalls(false);
               }}
-              className=""
+              className={showCalls ? "active-class" : ""}
             >
               Calls
             </a>
@@ -44,7 +45,7 @@ const MyCalls = () => {
                 setShowCallLogs(true);
                 setShowVoiceCalls(false);
               }}
-              className=""
+              className={showCallLogs ? "active-class" : ""}
             >
               Call Logs
             </a>
@@ -56,14 +57,14 @@ const MyCalls = () => {
                 setShowCallLogs(false);
                 setShowVoiceCalls(true);
               }}
-              className=""
+              className={showVoiceCall ? "active-class" : ""}
             >
               Voice Mail
             </a>
           </div>
         </div>
 
-        {showCalls ? <CallLogs /> : showVoiceCall ? <VoiceMail /> : <Call />}
+        {showCalls ? <Call /> : showVoiceCall ? <VoiceMail /> : <CallLogs />}
       </Card>
     </>
   );
@@ -71,12 +72,25 @@ const MyCalls = () => {
 
 const CallLogs = () => {
   return (
-    <ul class="list-group">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Morbi leo risus</li>
-      <li class="list-group-item">Porta ac consectetur ac</li>
-      <li class="list-group-item">Vestibulum at eros</li>
+    <ul className="list-group">
+      {data.map((d) => {
+        return (
+          <div key={d.id}>
+            <li className="list-group-item" key={d.id}>
+              {d.name}
+              <span className="text-info" style={{ fontSize: "11px" }}>
+                102
+              </span>
+              <span
+                style={{ fontSize: "12px" }}
+                className="float-right text-secondary"
+              >
+                {d.duration} &nbsp; {d.date} - {d.time}
+              </span>
+            </li>
+          </div>
+        );
+      })}
     </ul>
   );
 };
@@ -84,55 +98,56 @@ const CallLogs = () => {
 const Call = () => {
   return (
     <>
-      <div className="mb-2">
-        <li class="list-group-item bg-info">
-          Donald Trump <span style={{fontSize:"10px", fontWeight:'bold'}}> -104</span>
+      <div className="">
+        <li className="list-group-item bg-info">
+          Donald Trump
+          <span style={{ fontSize: "10px", fontWeight: "bold" }}> -104</span>
           <p className="float-right"> 0.45</p>
         </li>
         <div></div>
       </div>
       <Row>
         <Col md={4}>
-          <div class="text-center ">
+          <div className="text-center ">
             <i
               style={{ fontSize: "1.8rem" }}
-              class="fas fa-pause-circle text-success"
+              className="fas fa-pause-circle text-success"
             ></i>
             <p className="text-success">Hold</p>
           </div>
         </Col>
         <Col md={4}>
-          <div class="text-center ">
+          <div className="text-center ">
             <i
               style={{ fontSize: "1.8rem" }}
-              class="fas fa-exchange-alt text-success"
+              className="fas fa-exchange-alt text-success"
             ></i>
             <p className="text-success">Transfer</p>
           </div>
         </Col>
         <Col md={4}>
-          <div class="text-center ">
+          <div className="text-center ">
             <i
               style={{ fontSize: "1.8rem" }}
-              class="fab fa-product-hunt text-success"
+              className="fab fa-product-hunt text-success"
             ></i>
             <p className="text-success">Park</p>
           </div>
         </Col>
         <Col md={4}>
-          <div class="text-center ">
+          <div className="text-center ">
             <i
               style={{ fontSize: "1.8rem" }}
-              class="fas fa-microphone-alt text-success"
+              className="fas fa-microphone-alt text-success"
             ></i>
             <p className="text-success">Record</p>
           </div>
         </Col>
         <Col md={4}>
-          <div class="text-center">
+          <div className="text-center">
             <i
               style={{ fontSize: "1.8rem", transform: [{ rotateY: "180deg" }] }}
-              class="fas fa-phone text-danger"
+              className="fas fa-phone text-danger"
             ></i>
             <p className="text-danger">End</p>
           </div>
@@ -143,7 +158,51 @@ const Call = () => {
 };
 
 const VoiceMail = () => {
-  return <h2>Voice Component</h2>;
+  return (
+    <div>
+      <li className="list-group-item bg-info">
+        Donald Trump
+        <span style={{ fontSize: "10px", fontWeight: "bold" }}> -104</span>
+        <p className="float-right"> 0.45</p>
+      </li>
+      <Form>
+        <Form.Group controlId="formBasicRange">
+          <Form.Label>Range</Form.Label>
+          <Form.Control type="range" />
+        </Form.Group>
+      </Form>
+      <div className="d-flex " style={{ justifyContent: "space-around" }}>
+        <div className="text-center ">
+          <i
+            style={{ fontSize: "1.8rem" }}
+            className="fas fa-phone-alt text-success"
+          ></i>
+          <p className="text-success">Call Back</p>
+        </div>
+        <div className="text-center ">
+          <i
+            style={{ fontSize: "1.8rem" }}
+            className="fas fa-envelope text-success"
+          ></i>
+          <p className="text-success">Message</p>
+        </div>
+        <div className="text-center ">
+          <i
+            style={{ fontSize: "1.8rem" }}
+            className="fas fa-angle-double-right text-success"
+          ></i>
+          <p className="text-success">Forward</p>
+        </div>
+        <div className="text-center ">
+          <i
+            style={{ fontSize: "1.8rem" }}
+            className="fas fa-trash text-danger"
+          ></i>
+          <p className="text-danger">Delete</p>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default MyCalls;
